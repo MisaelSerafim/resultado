@@ -1,0 +1,141 @@
+:root {
+    --body-font-family: 'Helvetica Neue', Helvetica, Arial;
+    --body-font-size: 14px;
+    --body-line-height: 20px;
+    --body-font-weight: 400;
+    --body-color: #3b3b3b;
+    --body-font-smoothing: antialiased;
+    --body-background: #2b2b2b;
+    
+    --mobile-max-width: 580px;
+  }
+
+  *{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+
+  .table .row:nth-child(2) {
+    position: relative;
+}
+
+.table .row:nth-child(2)::after {
+    content: '1°';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    background: #f4d52f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #636363;
+    font-size: 13px;
+}
+
+  h1 {
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 30px;
+}
+[data-title="Name"] {
+    font-weight: bold !important;
+    color: #6c6c6c;
+    font-size: 14px !important;
+}
+html {
+    background: #434449;
+}
+  
+  .wrapper {
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 800px;
+  }
+  
+  .table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: table;
+    @media screen and (max-width: var(--mobile-max-width)) {
+      display: block;
+    }
+  }
+  
+  .row {
+    display: table-row;
+    background: #f6f6f6;
+    
+    &:nth-of-type(odd) {
+      background: #e9e9e9;
+    }
+    
+    &.header {
+      font-weight: 900;
+      color: #ffffff;
+      background: #a90000;
+    }
+    
+    &.green {
+      background: #27ae60;
+    }
+    
+    &.blue {
+      background: #3F51B5;
+    }
+
+    &.brown {
+        background: #b43b15;
+      }
+    
+    @media screen and (max-width: var(--mobile-max-width)) {
+      padding: 14px 0 7px;
+      display: block;
+      
+      &.header {
+        padding: 0;
+        height: 6px;
+        
+        .cell {
+          display: none;
+        }
+      }
+      
+      .cell {
+        margin-bottom: 10px;
+        
+        &:before {
+          margin-bottom: 3px;
+          content: attr(data-title);
+          min-width: 98px;
+          font-size: 10px;
+          line-height: 10px;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #969696;
+          display: block;
+        }
+      }
+    }
+  }
+  
+  .cell {
+    padding: 12px 10px;
+    display: table-cell;
+    @media screen and (max-width: var(--mobile-max-width)) {
+      padding: 2px 16px;
+      display:
+    block;
+    }
+  ;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  
